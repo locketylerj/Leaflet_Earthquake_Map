@@ -1,6 +1,18 @@
 // Store API query variables
 var url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 
+var techUrl = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json";
+
+// function faultLines() {
+//   return {
+//     d3.json(techUrl, function(d){
+//       L.geoJSON(d, {
+//         color: "yellow",
+//         stroke: true});
+//     })
+//   } 
+// };
+
 // Perform a GET request to the query URL
 d3.json(url, function(data) {
   // Once we get a response, send the data.features object to the createFeatures function
@@ -97,6 +109,12 @@ function createMap(earthquakes) {
     layers: [satellitemap, earthquakes]
   });
 
+  d3.json(techUrl, function(d){
+    L.geoJSON(d, {
+      color: "yellow",
+      stroke: true}).addTo(tyMap)
+    });
+
   // Create a layer control
   // Pass in our baseMaps and overlayMaps
   // Add the layer control to the map
@@ -133,7 +151,7 @@ function createMap(earthquakes) {
     };
     
 
-legend.addTo(tyMap);
+  legend.addTo(tyMap);
 
 
 }
