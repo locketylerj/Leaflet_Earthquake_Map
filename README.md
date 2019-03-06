@@ -31,8 +31,6 @@ This project visualizes earthquake data from around the globe.
 
    * Legend provides context for the map data.
 
-   * Your visualization should look something like the map above.
-
 - - -
 
 ### More Data
@@ -41,4 +39,4 @@ This project visualizes earthquake data from around the globe.
 
 A second data set is used on the map to illustrate the relationship between tectonic plates and seismic activity. Data on tectonic plates can be found at <https://github.com/fraxen/tectonicplates>.
 
-* A number of base maps to choose from are added as well as our two different data sets are put into overlays that can be turned on and off independently.
+* A number of base maps to choose from are added and our two different data sets are put into overlays that can be turned on and off independently.
